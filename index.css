@@ -1,10 +1,18 @@
-html {
-    font-family: 'PingFang HK', 'Heiti SC', 'Microsoft Yahei', Helvetica, sans-serif;
+body {
+    font-family: 'PingFang HK' !important;
 }
 
 .container-fluid {
     padding-left: 2%;
     padding-right: 2%;
+}
+
+.container-width {
+    max-width: 800px;
+}
+
+.image-width {
+    width: 100%;
 }
 
 #section1 {
@@ -177,12 +185,12 @@ h4,
 
 .image-left {
     padding-right: 1%;
-    padding-top: 10%;
+    padding-top: 12px;
 }
 
 .image-right {
     padding-left: 1%;
-    padding-top: 10%;
+    padding-top: 12px;
 }
 
 .text-position {
@@ -289,7 +297,7 @@ ol.list li {
     text-align: left;
     font-size: 14px;
     color: #333;
-    margin-bottom: 20px
+    margin-bottom: 12px
 }
 
 .paragraph-wrapper span {
@@ -311,7 +319,8 @@ ol.list li {
 .box-list {
     border-radius: 10px;
     padding: 10px;
-    margin-bottom: 40px
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .box:last-child {
@@ -334,4 +343,31 @@ ol.list li {
     display: inline-block;
     margin: 4px 0 0 10px;
     font-weight: bold
+}
+
+.rel-pos {
+    position: relative;
+}
+
+.image-cap {
+    position: absolute;
+    bottom: 5px;
+    background-color: rgba(255,255,255, 0.79);
+    border-radius: 4px;
+    right: 20px;
+    padding: 5px;
+    display: flex;
+}
+
+.image-cap img {
+    width: 30px;
+    height: 30px;
+}
+
+.font-12 {
+    font-size: 12px;
+}
+
+.font-8 {
+    font-size: 8px;
 }
