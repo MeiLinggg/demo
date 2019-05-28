@@ -45,9 +45,20 @@ body {
 }
 
 .first-para h6 {
+
     color: #27AAE0;
     font-size: 14px;
+
 }
+
+@media screen and (max-width: 320px) {
+    .first-para h6 {
+
+        color: #27AAE0;
+        font-size: 13px;
+    
+    }
+  }
 
 h4,
 .font-26 {
