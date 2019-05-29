@@ -141,13 +141,13 @@ h4,
 .box-property {
     border-radius: 10px;
     border: 1px solid transparent;
-    margin-top: 3%;
+    margin-top: 2%;
     text-align: left;
     line-height: 15px;
 }
 
 .box-property p {
-    margin: 3% 5%;
+    margin: 1% 5%;
     font-size: 12px;
     text-align: left;
 }
@@ -431,4 +431,8 @@ ol.list li {
 
 .arrow-down {
     bottom: 10px;
+}
+
+.p-below h3 {
+    padding-bottom: 2px !important;
 }

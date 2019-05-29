@@ -124,7 +124,7 @@
                     <div class="row">
                         <div class="col-12">
 
-                            <div class="logo-title">
+                            <div class="logo-title p-below">
                                 <img src="image/ARC_Towers_logo.png" alt="ARC Towers Logo" />
                                 <h3 class="heiti-font">优越的地理位置<br>
                                     <span class="title-below pingfang-font">LOCATION</span></h3>
@@ -487,40 +487,72 @@
 
     <script type="text/javascript" src="fullPage.js-master/vendors/scrolloverflow.js"></script>
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-    <script type="text/javascript" src="fullPage.js-master/dist/fullpage.min.js"></script>
+    <script type="text/javascript" src="fullPage.js-master/dist/fullpage.extensions.min.js"></script>
 
     <script type="text/javascript">
-        var deleteLog = false;
-        var OPTIONS = {
-            scrollOverflow: true,
-            afterLoad: function(anchorLink, index) {
 
-                if (index.isFirst) {
-                    $(".arrow-up").hide()
-                } else {
-                    $(".arrow-up").show()
+        $(document).ready(function(){
+
+            //initialising fullpage.js in the jQuery way
+            $('#fullpage').fullpage({
+                navigation: false,
+                slidesNavigation: true,
+                scrollOverflow: true,
+                afterLoad: function(anchorLink, index) {
+
+                    if (index.isFirst) {
+                        $(".arrow-up").hide()
+                    } else {
+                        $(".arrow-up").show()
+                    }
+                    if (index.isLast) {
+                        $(".arrow-down").hide()
+                    } else {
+                        $(".arrow-down").show()
+                    }
+                    deleteLog = true;
+
                 }
-                if (index.isLast) {
-                    $(".arrow-down").hide()
-                } else {
-                    $(".arrow-down").show()
-                }
-                deleteLog = true;
-            }
-        }
-        var myFullPage = new fullpage('#fullpage', OPTIONS);
+            });
 
+            // calling fullpage.js methods using jQuery
+            $('#moveUp').click(function(e){
+                e.preventDefault();
+                $.fn.fullpage.moveSectionUp();
+            });
 
-
-        $(document).on('click', '#moveDown', function() {
-            fullpage_api.moveSectionDown();
+            $('#moveDown').click(function(e){
+                e.preventDefault();
+                $.fn.fullpage.moveSectionDown();
+            });
         });
+        // var deleteLog = false;
+        // var OPTIONS = {
+        //     scrollOverflow: true,
+        //     afterLoad: function(anchorLink, index) {
 
-        $(document).on('click', '#moveUp', function() {
-            fullpage_api.moveSectionUp();
-        });
+        //         if (index.isFirst) {
+        //             $(".arrow-up").hide()
+        //         } else {
+        //             $(".arrow-up").show()
+        //         }
+        //         if (index.isLast) {
+        //             $(".arrow-down").hide()
+        //         } else {
+        //             $(".arrow-down").show()
+        //         }
+        //         deleteLog = true;
+        //     }
+        // }
+        // var myFullPage = new fullpage('#fullpage', OPTIONS);
+        
+        // $(document).on('click', '#moveDown', function() {
+        //     fullpage_api.moveSectionDown();
+        // });
+
+        // $(document).on('click', '#moveUp', function() {
+        //     fullpage_api.moveSectionUp();
+        // });
     </script>
     <!-- JS -->
 
