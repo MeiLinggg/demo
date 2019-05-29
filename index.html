@@ -8,9 +8,18 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="fullPage.js-master/dist/fullpage.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 </head>
 
 <body>
+
+    <div class="arrow arrow-up">
+        <i class="fas fa-angle-up" id="moveUp"></i>
+    </div>
+
+    <div class="arrow arrow-down">
+        <i class="fas fa-angle-down" id="moveDown"></i>
+    </div>
 
     <div id="fullpage">
         <div class="section text-center" id="section1">
@@ -483,11 +492,35 @@
     <script type="text/javascript" src="fullPage.js-master/dist/fullpage.min.js"></script>
 
     <script type="text/javascript">
+        var deleteLog = false;
         var OPTIONS = {
             scrollOverflow: true,
-            // scrollingSpeed: 500
+            afterLoad: function(anchorLink, index) {
+
+                if (index.isFirst) {
+                    $(".arrow-up").hide()
+                } else {
+                    $(".arrow-up").show()
+                }
+                if (index.isLast) {
+                    $(".arrow-down").hide()
+                } else {
+                    $(".arrow-down").show()
+                }
+                deleteLog = true;
+            }
         }
         var myFullPage = new fullpage('#fullpage', OPTIONS);
+
+
+
+        $(document).on('click', '#moveDown', function() {
+            fullpage_api.moveSectionDown();
+        });
+
+        $(document).on('click', '#moveUp', function() {
+            fullpage_api.moveSectionUp();
+        });
     </script>
     <!-- JS -->
 

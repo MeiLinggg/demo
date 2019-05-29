@@ -415,3 +415,21 @@ ol.list li {
     width: 40px;
     margin: auto;
 }
+
+.arrow {
+    position: fixed;
+    z-index: 9;
+    width: 100%;
+    text-align: center;
+    font-size: 47px;
+    opacity: 0.3;
+    color: grey;
+}
+
+.arrow-up {
+    top: 10px;
+}
+
+.arrow-down {
+    bottom: 10px;
+}
