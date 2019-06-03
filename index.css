@@ -436,3 +436,8 @@ ol.list li {
 .p-below h3 {
     padding-bottom: 2px !important;
 }
+
+.logo-size {
+    width: 174px;
+    height: 174px;
+}
