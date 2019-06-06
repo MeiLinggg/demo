@@ -82,6 +82,10 @@ body,
     font-size: 14px;
 }
 
+.container-fluid {
+    margin-bottom: 50px;
+}
+
 @media screen and (max-width: 320px) {
     .first-para h6 {
         color: #27AAE0;
@@ -498,4 +502,8 @@ ol.list li {
 .down {
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
+}
+
+.top-space {
+    margin-top: 30px;
 }
